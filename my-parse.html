@@ -7,10 +7,7 @@
 
 
 
-
-
 <link href="https://hyf871847437.github.io/veido-parse/my-base.css" rel="stylesheet" type="text/css">
-
 
 
 
@@ -22,10 +19,10 @@
 
 <div class="centers">
 
-          <select style="border:0px;font-size:18px" onchange="xuanzejiekou(this)">
+          <select style="border:0px;font-size:18px;" onchange="xuanzejiekou(this)">
 
-          	<option value="http://jx.tvbyb.com/jx.php?url=">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择接口</option>
-			 <option value="http://www.wmxz.wang/video.php?url=">无名小站</option>
+          	<option value="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择接口</option>
+			<option value="http://www.wmxz.wang/video.php?url=">无名小站</option>
             <option value="http://www.vipjiexi.com/yun.php?url=">52解析</option>			 
           	<option value="http://www.zjpj.com/zjpjv/?url=">ODFLY解析</option>
             <option value="https://api.47ks.com/webcloud/?v=">47player</option>
@@ -37,7 +34,8 @@
           </select>
 
     <div class="searchs">
-
+	
+         
         <div class="from">
 
           <input name="url" id="url" type="text" class="text" value="http://www.iqiyi.com/v_19rr9tqe9s.html#vfrm=19-9-0-1">
@@ -52,16 +50,49 @@
 
     </div>
 
-    <div id="ckplays">
-
-    	<iframe id="jiekou" name="jiekou" src="http://www.82190555.com/index/qqvod.php?url=http://www.iqiyi.com/v_19rr9tqe9s.html#vfrm=19-9-0-1" width="100%" height="550px"></iframe>
-
-    </div> 
 
   </div>  
 
 
+ <script>
+ jiekou = ''
+ function xuanzejiekou(v){
 
+	var url = document.getElementById("url").value;
+
+	if(url==""){
+
+		alert('请输入视频网站网址！');
+
+	}else{
+
+		jiekou = v.value
+
+	}
+
+}
+
+function jiexi(){
+   
+	var url = document.getElementById("url").value;
+	if(jiekou==""){
+
+		src = "http://www.wmxz.wang/video.php?url=" + url;
+
+	}else{
+
+		src = jiekou + url;
+
+	}
+
+	window.open(src,"");
+	
+
+}
+
+
+	
+</script>
              
 <!--PC和WAP自适应版-->
 
